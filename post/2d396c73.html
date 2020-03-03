@@ -8,21 +8,21 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>react中antd+css Module一起使用 - lanshu</title>
+<title>Antd的Select如何设置对内容能够筛选 （不是value） - lanshu</title>
 
 
-    <meta name="description" content="antd 和 css modules 不能混用,针对antd的css 单独写一条loader的规则,不开启 css modules。使用 exclude 和 include 配置参考https:&#x2F;&#x2F;segmentfault.com&#x2F;q&#x2F;1010000011223900,修改webpack.config.dev.js 和 webpack.config-prod.js 配置文件 (尽量不要使用less">
+    <meta name="description" content="Select组件是按照筛选项的value来筛选的，而我们需要的是按照筛选项的显示的内容来筛选, 这时候该如何设置呢。optionFilterProp&#x3D;”children” 1234567891011121314151617181920&lt;a-form-item    :colon&#x3D;&quot;false&quot;    label&#x3D;&quot;入职公司&quot;&gt;    &lt;a-select        allowC">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react中antd+css Module一起使用">
-<meta property="og:url" content="https://lanshublog.top/post/b9ba1266.html">
+<meta property="og:title" content="Antd的Select如何设置对内容能够筛选 （不是value）">
+<meta property="og:url" content="https://lanshublog.top/post/2d396c73.html">
 <meta property="og:site_name" content="lanshu">
-<meta property="og:description" content="antd 和 css modules 不能混用,针对antd的css 单独写一条loader的规则,不开启 css modules。使用 exclude 和 include 配置参考https:&#x2F;&#x2F;segmentfault.com&#x2F;q&#x2F;1010000011223900,修改webpack.config.dev.js 和 webpack.config-prod.js 配置文件 (尽量不要使用less">
+<meta property="og:description" content="Select组件是按照筛选项的value来筛选的，而我们需要的是按照筛选项的显示的内容来筛选, 这时候该如何设置呢。optionFilterProp&#x3D;”children” 1234567891011121314151617181920&lt;a-form-item    :colon&#x3D;&quot;false&quot;    label&#x3D;&quot;入职公司&quot;&gt;    &lt;a-select        allowC">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://lanshublog.top/images/og_image.png">
-<meta property="article:published_time" content="2019-12-11T07:58:44.000Z">
-<meta property="article:modified_time" content="2020-01-07T01:39:55.000Z">
+<meta property="article:published_time" content="2020-03-03T05:51:24.000Z">
+<meta property="article:modified_time" content="2020-03-03T05:58:49.125Z">
 <meta property="article:author" content="lanshu">
-<meta property="article:tag" content="react">
+<meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://lanshublog.top/images/og_image.png">
 
@@ -90,7 +90,7 @@ var _hmt = _hmt || [];
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.jpg" alt="react中antd+css Module一起使用" height="28">
+                <img src="/images/logo.jpg" alt="Antd的Select如何设置对内容能够筛选 （不是value）" height="28">
             
             </a>
         </div>
@@ -143,17 +143,17 @@ var _hmt = _hmt || [];
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-11T07:58:44.000Z">2019-12-11</time>
+                <time class="level-item has-text-grey" datetime="2020-03-03T05:51:24.000Z">2020-03-03</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/react/">react</a>
+                <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/ant-design-vue%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/">ant-design-vue踩过的坑</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 262 个字)
+                    几秒 读完 (大约 52 个字)
                 </span>
                 
                 
@@ -167,17 +167,12 @@ var _hmt = _hmt || [];
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                react中antd+css Module一起使用
+                Antd的Select如何设置对内容能够筛选 （不是value）
             
         </h1>
         <div class="content">
-            <h3 id="antd-和-css-modules-不能混用-针对antd的css-单独写一条loader的规则-不开启-css-modules。"><a href="#antd-和-css-modules-不能混用-针对antd的css-单独写一条loader的规则-不开启-css-modules。" class="headerlink" title="antd 和 css modules 不能混用,针对antd的css 单独写一条loader的规则,不开启 css modules。"></a>antd 和 css modules 不能混用,针对antd的css 单独写一条loader的规则,不开启 css modules。</h3><p>使用 exclude 和 include 配置参考<a href="https://segmentfault.com/q/1010000011223900">https://segmentfault.com/q/1010000011223900</a>,修改webpack.config.dev.js 和 webpack.config-prod.js 配置文件 (尽量不要使用less-loader 来处理css文件，在与antd一起使用时可能出现错误，单独写一条规则)，所以我们只能两个来处理css的loader。</p>
-<a id="more"></a>
-
-<p>在react中使用antd+less+css modules参考<a href="https://www.jianshu.com/p/51ff1c8be301">https://www.jianshu.com/p/51ff1c8be301</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ant的按需加载</span></span><br><span class="line">                    &#123;</span><br><span class="line">                        test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">                        include: <span class="regexp">/node_modules/</span>,</span><br><span class="line">                        use: [</span><br><span class="line">                            <span class="built_in">require</span>.resolve(<span class="string">'style-loader'</span>),</span><br><span class="line">                            &#123;</span><br><span class="line">                                loader: <span class="built_in">require</span>.resolve(<span class="string">'css-loader'</span>),</span><br><span class="line">                                options: &#123;</span><br><span class="line">                                    importLoaders: <span class="number">1</span>,</span><br><span class="line">                                &#125;,</span><br><span class="line">                            &#125;,</span><br><span class="line">                            &#123;</span><br><span class="line">                                loader: <span class="built_in">require</span>.resolve(<span class="string">'postcss-loader'</span>),</span><br><span class="line">                                options: &#123;</span><br><span class="line">                                    <span class="comment">// Necessary for external CSS imports to work</span></span><br><span class="line">                                    <span class="comment">// https://github.com/facebookincubator/create-react-app/issues/2677</span></span><br><span class="line">                                    ident: <span class="string">'postcss'</span>,</span><br><span class="line">                                    plugins: <span class="function"><span class="params">()</span> =&gt;</span> [</span><br><span class="line">                                        <span class="built_in">require</span>(<span class="string">'postcss-flexbugs-fixes'</span>),</span><br><span class="line">                                        autoprefixer(&#123;</span><br><span class="line">                                            browsers: [</span><br><span class="line">                                                <span class="string">'&gt;1%'</span>,</span><br><span class="line">                                                <span class="string">'last 4 versions'</span>,</span><br><span class="line">                                                <span class="string">'Firefox ESR'</span>,</span><br><span class="line">                                                <span class="string">'not ie &lt; 9'</span>, <span class="comment">// React doesn't support IE8 anyway</span></span><br><span class="line">                                            ],</span><br><span class="line">                                            flexbox: <span class="string">'no-2009'</span>,</span><br><span class="line">                                        &#125;),</span><br><span class="line">                                    ],</span><br><span class="line">                                &#125;,</span><br><span class="line">                            &#125;,</span><br><span class="line">                        ],</span><br><span class="line">                    &#125;,</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 正常的网页中的css</span></span><br><span class="line">                    &#123;</span><br><span class="line">                        test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">                        exclude: <span class="regexp">/node_modules/</span>,</span><br><span class="line">                        use: [</span><br><span class="line">                            <span class="built_in">require</span>.resolve(<span class="string">'style-loader'</span>),</span><br><span class="line">                            &#123;</span><br><span class="line">                                loader: <span class="built_in">require</span>.resolve(<span class="string">'css-loader'</span>),</span><br><span class="line">                                options: &#123;</span><br><span class="line">                                    importLoaders: <span class="number">1</span>,</span><br><span class="line">                                    modules: <span class="literal">true</span>,</span><br><span class="line">                                    localIdentName: <span class="string">"[name]__[local]___[hash:base64:5]"</span>,</span><br><span class="line"></span><br><span class="line">                                &#125;,</span><br><span class="line">                            &#125;,</span><br><span class="line">                            &#123;</span><br><span class="line">                                loader: <span class="built_in">require</span>.resolve(<span class="string">'postcss-loader'</span>),</span><br><span class="line">                                options: &#123;</span><br><span class="line">                                    <span class="comment">// Necessary for external CSS imports to work</span></span><br><span class="line">                                    <span class="comment">// https://github.com/facebookincubator/create-react-app/issues/2677</span></span><br><span class="line">                                    ident: <span class="string">'postcss'</span>,</span><br><span class="line">                                    plugins: <span class="function"><span class="params">()</span> =&gt;</span> [</span><br><span class="line">                                        <span class="built_in">require</span>(<span class="string">'postcss-flexbugs-fixes'</span>),</span><br><span class="line">                                        autoprefixer(&#123;</span><br><span class="line">                                            browsers: [</span><br><span class="line">                                                <span class="string">'&gt;1%'</span>,</span><br><span class="line">                                                <span class="string">'last 4 versions'</span>,</span><br><span class="line">                                                <span class="string">'Firefox ESR'</span>,</span><br><span class="line">                                                <span class="string">'not ie &lt; 9'</span>, <span class="comment">// React doesn't support IE8 anyway</span></span><br><span class="line">                                            ],</span><br><span class="line">                                            flexbox: <span class="string">'no-2009'</span>,</span><br><span class="line">                                        &#125;),</span><br><span class="line">                                    ],</span><br><span class="line">                                &#125;,</span><br><span class="line">                            &#125;,</span><br><span class="line">                        ],</span><br><span class="line">                    &#125;,</span><br></pre></td></tr></table></figure>
+            <p>Select组件是按照筛选项的value来筛选的，而我们需要的是按照筛选项的显示的内容来筛选, 这时候该如何设置呢。<strong>optionFilterProp=”children”</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-form-item</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:colon</span>=<span class="string">"false"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">label</span>=<span class="string">"入职公司"</span></span></span><br><span class="line"><span class="tag">&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-select</span></span></span><br><span class="line"><span class="tag">        <span class="attr">allowClear</span></span></span><br><span class="line"><span class="tag">        <span class="attr">showSearch</span> // 是否支持搜索</span></span><br><span class="line"><span class="tag">        <span class="attr">optionFilterProp</span>=<span class="string">"children"</span> // *把搜索的<span class="attr">value</span>换成<span class="attr">children</span></span></span><br><span class="line"><span class="tag">        <span class="attr">placeholder</span>=<span class="string">"请选择"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">size</span>=<span class="string">"small"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:labelInValue</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">v-decorator</span>=<span class="string">"['companyCode',&#123;rules: [&#123; required: true, message: '请选择入职公司!' &#125;]&#125;]"</span></span></span><br><span class="line"><span class="tag">    &gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a-select-option</span></span></span><br><span class="line"><span class="tag">            <span class="attr">:key</span>=<span class="string">"index"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">:value</span>=<span class="string">"item.code"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">v-for</span>=<span class="string">"(item, index) in branchAndArea"</span></span></span><br><span class="line"><span class="tag">        &gt;</span>&#123;&#123;item.name&#125;&#125;<span class="tag">&lt;/<span class="name">a-select-option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">a-select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-form-item</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -185,7 +180,7 @@ var _hmt = _hmt || [];
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/react/" rel="tag">react</a>
+                    <a class="has-link-grey -link" href="/tags/vue/" rel="tag">vue</a>
                 </div>
             </div>
         </div>
@@ -231,17 +226,10 @@ var _hmt = _hmt || [];
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/post/15c9b8d0.html">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">react中自定义antd主题与支持less（第二部）</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/post/cc896a6d.html">
-                <span class="level-item">react中create-react-app配置antd按需加载（方法二）</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/post/d0d99cf1.html">
+                <span class="level-item">没有在 v-if / v-if-else / v-else 中使用 key</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -952,7 +940,7 @@ var _hmt = _hmt || [];
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.jpg" alt="react中antd+css Module一起使用" height="28">
+                    <img src="/images/logo.jpg" alt="Antd的Select如何设置对内容能够筛选 （不是value）" height="28">
                 
                 </a>
                 <p class="is-size-7">

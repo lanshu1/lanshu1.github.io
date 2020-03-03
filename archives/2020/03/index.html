@@ -8,21 +8,16 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>react中antd+css Module一起使用 - lanshu</title>
+<title>归档: 2020/3 - lanshu</title>
 
 
-    <meta name="description" content="antd 和 css modules 不能混用,针对antd的css 单独写一条loader的规则,不开启 css modules。使用 exclude 和 include 配置参考https:&#x2F;&#x2F;segmentfault.com&#x2F;q&#x2F;1010000011223900,修改webpack.config.dev.js 和 webpack.config-prod.js 配置文件 (尽量不要使用less">
-<meta property="og:type" content="article">
-<meta property="og:title" content="react中antd+css Module一起使用">
-<meta property="og:url" content="https://lanshublog.top/post/b9ba1266.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="lanshu">
+<meta property="og:url" content="https://lanshublog.top/archives/2020/03/index.html">
 <meta property="og:site_name" content="lanshu">
-<meta property="og:description" content="antd 和 css modules 不能混用,针对antd的css 单独写一条loader的规则,不开启 css modules。使用 exclude 和 include 配置参考https:&#x2F;&#x2F;segmentfault.com&#x2F;q&#x2F;1010000011223900,修改webpack.config.dev.js 和 webpack.config-prod.js 配置文件 (尽量不要使用less">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://lanshublog.top/images/og_image.png">
-<meta property="article:published_time" content="2019-12-11T07:58:44.000Z">
-<meta property="article:modified_time" content="2020-01-07T01:39:55.000Z">
 <meta property="article:author" content="lanshu">
-<meta property="article:tag" content="react">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://lanshublog.top/images/og_image.png">
 
@@ -90,7 +85,7 @@ var _hmt = _hmt || [];
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.jpg" alt="react中antd+css Module一起使用" height="28">
+                <img src="/images/logo.jpg" alt="lanshu" height="28">
             
             </a>
         </div>
@@ -137,142 +132,38 @@ var _hmt = _hmt || [];
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-11T07:58:44.000Z">2019-12-11</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/react/">react</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 分钟 读完 (大约 262 个字)
-                </span>
-                
-                
-                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
-                    <i class="far fa-eye"></i>
-                    <span id="busuanzi_value_page_pv">0</span>次访问
-                </span>
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                react中antd+css Module一起使用
-            
-        </h1>
-        <div class="content">
-            <h3 id="antd-和-css-modules-不能混用-针对antd的css-单独写一条loader的规则-不开启-css-modules。"><a href="#antd-和-css-modules-不能混用-针对antd的css-单独写一条loader的规则-不开启-css-modules。" class="headerlink" title="antd 和 css modules 不能混用,针对antd的css 单独写一条loader的规则,不开启 css modules。"></a>antd 和 css modules 不能混用,针对antd的css 单独写一条loader的规则,不开启 css modules。</h3><p>使用 exclude 和 include 配置参考<a href="https://segmentfault.com/q/1010000011223900">https://segmentfault.com/q/1010000011223900</a>,修改webpack.config.dev.js 和 webpack.config-prod.js 配置文件 (尽量不要使用less-loader 来处理css文件，在与antd一起使用时可能出现错误，单独写一条规则)，所以我们只能两个来处理css的loader。</p>
-<a id="more"></a>
 
-<p>在react中使用antd+less+css modules参考<a href="https://www.jianshu.com/p/51ff1c8be301">https://www.jianshu.com/p/51ff1c8be301</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ant的按需加载</span></span><br><span class="line">                    &#123;</span><br><span class="line">                        test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">                        include: <span class="regexp">/node_modules/</span>,</span><br><span class="line">                        use: [</span><br><span class="line">                            <span class="built_in">require</span>.resolve(<span class="string">'style-loader'</span>),</span><br><span class="line">                            &#123;</span><br><span class="line">                                loader: <span class="built_in">require</span>.resolve(<span class="string">'css-loader'</span>),</span><br><span class="line">                                options: &#123;</span><br><span class="line">                                    importLoaders: <span class="number">1</span>,</span><br><span class="line">                                &#125;,</span><br><span class="line">                            &#125;,</span><br><span class="line">                            &#123;</span><br><span class="line">                                loader: <span class="built_in">require</span>.resolve(<span class="string">'postcss-loader'</span>),</span><br><span class="line">                                options: &#123;</span><br><span class="line">                                    <span class="comment">// Necessary for external CSS imports to work</span></span><br><span class="line">                                    <span class="comment">// https://github.com/facebookincubator/create-react-app/issues/2677</span></span><br><span class="line">                                    ident: <span class="string">'postcss'</span>,</span><br><span class="line">                                    plugins: <span class="function"><span class="params">()</span> =&gt;</span> [</span><br><span class="line">                                        <span class="built_in">require</span>(<span class="string">'postcss-flexbugs-fixes'</span>),</span><br><span class="line">                                        autoprefixer(&#123;</span><br><span class="line">                                            browsers: [</span><br><span class="line">                                                <span class="string">'&gt;1%'</span>,</span><br><span class="line">                                                <span class="string">'last 4 versions'</span>,</span><br><span class="line">                                                <span class="string">'Firefox ESR'</span>,</span><br><span class="line">                                                <span class="string">'not ie &lt; 9'</span>, <span class="comment">// React doesn't support IE8 anyway</span></span><br><span class="line">                                            ],</span><br><span class="line">                                            flexbox: <span class="string">'no-2009'</span>,</span><br><span class="line">                                        &#125;),</span><br><span class="line">                                    ],</span><br><span class="line">                                &#125;,</span><br><span class="line">                            &#125;,</span><br><span class="line">                        ],</span><br><span class="line">                    &#125;,</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 正常的网页中的css</span></span><br><span class="line">                    &#123;</span><br><span class="line">                        test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">                        exclude: <span class="regexp">/node_modules/</span>,</span><br><span class="line">                        use: [</span><br><span class="line">                            <span class="built_in">require</span>.resolve(<span class="string">'style-loader'</span>),</span><br><span class="line">                            &#123;</span><br><span class="line">                                loader: <span class="built_in">require</span>.resolve(<span class="string">'css-loader'</span>),</span><br><span class="line">                                options: &#123;</span><br><span class="line">                                    importLoaders: <span class="number">1</span>,</span><br><span class="line">                                    modules: <span class="literal">true</span>,</span><br><span class="line">                                    localIdentName: <span class="string">"[name]__[local]___[hash:base64:5]"</span>,</span><br><span class="line"></span><br><span class="line">                                &#125;,</span><br><span class="line">                            &#125;,</span><br><span class="line">                            &#123;</span><br><span class="line">                                loader: <span class="built_in">require</span>.resolve(<span class="string">'postcss-loader'</span>),</span><br><span class="line">                                options: &#123;</span><br><span class="line">                                    <span class="comment">// Necessary for external CSS imports to work</span></span><br><span class="line">                                    <span class="comment">// https://github.com/facebookincubator/create-react-app/issues/2677</span></span><br><span class="line">                                    ident: <span class="string">'postcss'</span>,</span><br><span class="line">                                    plugins: <span class="function"><span class="params">()</span> =&gt;</span> [</span><br><span class="line">                                        <span class="built_in">require</span>(<span class="string">'postcss-flexbugs-fixes'</span>),</span><br><span class="line">                                        autoprefixer(&#123;</span><br><span class="line">                                            browsers: [</span><br><span class="line">                                                <span class="string">'&gt;1%'</span>,</span><br><span class="line">                                                <span class="string">'last 4 versions'</span>,</span><br><span class="line">                                                <span class="string">'Firefox ESR'</span>,</span><br><span class="line">                                                <span class="string">'not ie &lt; 9'</span>, <span class="comment">// React doesn't support IE8 anyway</span></span><br><span class="line">                                            ],</span><br><span class="line">                                            flexbox: <span class="string">'no-2009'</span>,</span><br><span class="line">                                        &#125;),</span><br><span class="line">                                    ],</span><br><span class="line">                                &#125;,</span><br><span class="line">                            &#125;,</span><br><span class="line">                        ],</span><br><span class="line">                    &#125;,</span><br></pre></td></tr></table></figure>
-
-        </div>
-        
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/react/" rel="tag">react</a>
-                </div>
-            </div>
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-<div class="card">
+<div class="card widget">
     <div class="card-content">
-        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
-        <div class="buttons is-centered">
-            
+        <h3 class="tag is-link">
+        三月 2020
+        </h3>
+        <div class="timeline">
+        
+            <article class="media">
                 
-<a class="button is-info donate">
-    <span class="icon is-small">
-        <i class="fab fa-alipay"></i>
-    </span>
-    <span>支付宝</span>
-    <div class="qrcode"><img src="/images/zhifubao.jpg" alt="支付宝"></div>
-</a>
-
-                
-                
-<a class="button is-success donate">
-    <span class="icon is-small">
-        <i class="fab fa-weixin"></i>
-    </span>
-    <span>微信</span>
-    <div class="qrcode"><img src="/images/weixin.jpg" alt="微信"></div>
-</a>
-
-                
+                <div class="media-content">
+                    <div class="content">
+                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2020-03-03T05:51:24.000Z">2020-03-03</time>
+                        <a href="/post/2d396c73.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">Antd的Select如何设置对内容能够筛选 （不是value）</a>
+                        <div class="level article-meta is-mobile">
+                            <div class="level-left">
+                                
+                                <div class="level-item is-size-7 is-uppercase">
+                                <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a> / <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/ant-design-vue%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/">ant-design-vue踩过的坑</a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        
         </div>
     </div>
 </div>
 
 
-
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/post/15c9b8d0.html">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">react中自定义antd主题与支持less（第二部）</span>
-            </a>
-        </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/post/cc896a6d.html">
-                <span class="level-item">react中create-react-app配置antd按需加载（方法二）</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
-        </div>
-        
-    </div>
-</div>
-
-
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="valine-thread" class="content"></div>
-<!-- <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script> -->
-<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script>
-    new Valine({
-        el: '#valine-thread' ,
-        notify: false,
-        verify: false,
-        app_id: 'm0Wcn28FjOGkbym94lB66TH5-gzGzoHsz',
-        app_key: 'SwTpMrOCQrB7wo1EL77mRbdb',
-        placeholder: 'Say something...',
-        pageSize: '5',
-    });
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -952,7 +843,7 @@ var _hmt = _hmt || [];
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.jpg" alt="react中antd+css Module一起使用" height="28">
+                    <img src="/images/logo.jpg" alt="lanshu" height="28">
                 
                 </a>
                 <p class="is-size-7">
